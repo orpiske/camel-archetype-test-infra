@@ -35,9 +35,17 @@ public class ${name}LocalContainerService implements ${name}Service, ContainerSe
 
 
     @Override
+    public void registerProperties() {
+
+    }
+
+
+    @Override
     public void initialize() {
         LOG.info("Trying to start the ${name} container");
         container.start();
+
+        registerProperties();
 
         // Uncomment and replace with the actual address used to access the server
         // LOG.info("${name} instance running at {}", getServiceAddress());

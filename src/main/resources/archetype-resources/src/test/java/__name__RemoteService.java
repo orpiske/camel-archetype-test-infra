@@ -19,8 +19,13 @@ package ${package};
 public class ${name}RemoteService implements ${name}Service {
 
     @Override
-    public void initialize() {
+    public void registerProperties() {
         // NO-OP
+    }
+
+    @Override
+    public void initialize() {
+        registerProperties();
     }
 
     @Override
