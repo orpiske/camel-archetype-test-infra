@@ -21,7 +21,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testcontainers.containers.GenericContainer;
 
-
 public class ${name}LocalContainerService implements ${name}Service, ContainerService<GenericContainer> {
     private static final Logger LOG = LoggerFactory.getLogger(${name}LocalContainerService.class);
 
@@ -33,12 +32,10 @@ public class ${name}LocalContainerService implements ${name}Service, ContainerSe
         container = new GenericContainer(containerName);
     }
 
-
     @Override
     public void registerProperties() {
 
     }
-
 
     @Override
     public void initialize() {
