@@ -25,17 +25,6 @@ import org.junit.jupiter.api.extension.ExtensionContext;
  * Test infra service for ${name}
  */
 public interface ${name}Service extends BeforeAllCallback, AfterAllCallback, TestService {
-
-    /**
-     * Perform any initialization necessary
-     */
-    void initialize();
-
-    /**
-     * Shuts down the service after the test has completed
-     */
-    void shutdown();
-
     @Override
     default void beforeAll(ExtensionContext extensionContext) throws Exception {
         initialize();
