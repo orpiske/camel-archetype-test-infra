@@ -26,18 +26,14 @@ public final class ${name}ServiceFactory {
 
     }
 
+    public static SimpleTestServiceBuilder<${name}Service> builder() {
+        return new SimpleTestServiceBuilder<>("${name.toLowerCase()}");
+    }
+
     public static ${name}Service createService() {
-        String instanceType = System.getProperty("${name.toLowerCase()}.instance.type");
-
-        if (instanceType == null || instanceType.equals("local-${name.toLowerCase()}-container")) {
-            return new ${name}LocalContainerService();
-        }
-
-        if (instanceType.equals("remote")) {
-            return new ${name}RemoteService();
-        }
-
-        LOG.error("${name} instance must be one of 'local-${name.toLowerCase()}-container' or 'remote");
-        throw new UnsupportedOperationException("Invalid ${name} instance type");
+        return builder()
+                .addLocalMapping(${name}LocalContainerService::new)
+                .addRemoteMapping(${name}RemoteService::new)
+                .build();
     }
 }
