@@ -16,11 +16,9 @@
  */
 package ${package}.services;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.camel.test.infra.common.services.SimpleTestServiceBuilder;
 
 public final class ${name}ServiceFactory {
-    private static final Logger LOG = LoggerFactory.getLogger(${name}ServiceFactory.class);
 
     private ${name}ServiceFactory() {
 
